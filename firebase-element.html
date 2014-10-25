@@ -424,6 +424,12 @@ Example:
         this.ref.child(key).set(this.data[key], this.errorHandler);
       }
     },
+    commitPriority: function(key, priority) {
+      this.log && console.log('commitPriority ' + key + ' - ' + priority);
+      if (this.ref) {
+        this.ref.child(key).setPriority(priority);
+      }
+    },
     remove: function(key) {
       this.ref.child(key).remove(this.errorHandler);
     },
